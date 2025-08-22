@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета для участі у дослідженні управителів багатоквартирних будинків</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="survey-container">
+        <div class="survey-header">
+            <h1>Анкета для участі у дослідженні управителів багатоквартирних будинків</h1>
+            <p>Співпраця з ОСББ, договірна діяльність і управлінські виклики</p>
+        </div>
+
+        <div class="survey-form">
+            <a href="../index.html" class="back-link">Повернутися на головну</a>
+            
+            <div class="progress-container">
+                <div class="progress-info">
+                    <span>Прогрес заповнення</span>
+                    <span id="progressText">0 з 50 питань</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <div id="successMessage" class="message success-message hidden">
+                <h4>✅ Дякуємо за участь у дослідженні!</h4>
+                <p>Ваші відповіді успішно збережено та передано для аналізу.</p>
+                <p><strong>ID відповіді:</strong> <span id="responseId"></span></p>
+            </div>
+
+            <div id="errorMessage" class="message error-message hidden">
+                <h4>❌ Помилка відправки</h4>
+                <p id="errorText"></p>
+            </div>
+
+            <form id="surveyForm">
+                <!-- Блок 1: Загальна характеристика діяльності -->
+                <div class="question-block">
+                    <h3>Блок 1: Загальна характеристика діяльності</h3>
+                    
+                    <div class="question">
+                        <div class="question-number">1</div>
+                        <div class="question-text">Чи укладено з ОСББ офіційний договір на управління будинком?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q1', 'yes')">
+                                <input type="radio" id="q1_yes" name="q1" value="yes">
+                                <label for="q1_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q1', 'no')">
+                                <input type="radio" id="q1_no" name="q1" value="no">
+                                <label for="q1_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q1', 'undecided')">
+                                <input type="radio" id="q1_undecided" name="q1" value="undecided">
+                                <label for="q1_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">2</div>
+                        <div class="question-text">Чи умови договору відповідають типовому договору, затвердженому державою?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q2', 'yes')">
+                                <input type="radio" id="q2_yes" name="q2" value="yes">
+                                <label for="q2_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q2', 'no')">
+                                <input type="radio" id="q2_no" name="q2" value="no">
+                                <label for="q2_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q2', 'undecided')">
+                                <input type="radio" id="q2_undecided" name="q2" value="undecided">
+                                <label for="q2_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">3</div>
+                        <div class="question-text">Чи фіксується строк дії договору в офіційній документації?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q3', 'yes')">
+                                <input type="radio" id="q3_yes" name="q3" value="yes">
+                                <label for="q3_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q3', 'no')">
+                                <input type="radio" id="q3_no" name="q3" value="no">
+                                <label for="q3_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q3', 'undecided')">
+                                <input type="radio" id="q3_undecided" name="q3" value="undecided">
+                                <label for="q3_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">4</div>
+                        <div class="question-text">Чи проводиться оновлення (пролонгація) договорів відповідно до законодавства?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q4', 'yes')">
+                                <input type="radio" id="q4_yes" name="q4" value="yes">
+                                <label for="q4_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q4', 'no')">
+                                <input type="radio" id="q4_no" name="q4" value="no">
+                                <label for="q4_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q4', 'undecided')">
+                                <input type="radio" id="q4_undecided" name="q4" value="undecided">
+                                <label for="q4_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">5</div>
+                        <div class="question-text">Чи укладено договори з кількома ОСББ одночасно?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q5', 'yes')">
+                                <input type="radio" id="q5_yes" name="q5" value="yes">
+                                <label for="q5_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q5', 'no')">
+                                <input type="radio" id="q5_no" name="q5" value="no">
+                                <label for="q5_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q5', 'undecided')">
+                                <input type="radio" id="q5_undecided" name="q5" value="undecided">
+                                <label for="q5_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блок 2: Функції та обсяг повноважень -->
+                <div class="question-block">
+                    <h3>Блок 2: Функції та обсяг повноважень</h3>
+                    
+                    <div class="question">
+                        <div class="question-number">6</div>
+                        <div class="question-text">Чи чітко визначені обов'язки управителя в договорі?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q6', 'yes')">
+                                <input type="radio" id="q6_yes" name="q6" value="yes">
+                                <label for="q6_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q6', 'no')">
+                                <input type="radio" id="q6_no" name="q6" value="no">
+                                <label for="q6_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q6', 'undecided')">
+                                <input type="radio" id="q6_undecided" name="q6" value="undecided">
+                                <label for="q6_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">7</div>
+                        <div class="question-text">Чи наявний у договорі перелік делегованих управлінських функцій?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q7', 'yes')">
+                                <input type="radio" id="q7_yes" name="q7" value="yes">
+                                <label for="q7_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q7', 'no')">
+                                <input type="radio" id="q7_no" name="q7" value="no">
+                                <label for="q7_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q7', 'undecided')">
+                                <input type="radio" id="q7_undecided" name="q7" value="undecided">
+                                <label for="q7_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">8</div>
+                        <div class="question-text">Чи маєте Ви право підписувати фінансові документи ОСББ?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q8', 'yes')">
+                                <input type="radio" id="q8_yes" name="q8" value="yes">
+                                <label for="q8_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q8', 'no')">
+                                <input type="radio" id="q8_no" name="q8" value="no">
+                                <label for="q8_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q8', 'undecided')">
+                                <input type="radio" id="q8_undecided" name="q8" value="undecided">
+                                <label for="q8_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">9</div>
+                        <div class="question-text">Чи погоджуються кошториси та витрати з правлінням ОСББ?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q9', 'yes')">
+                                <input type="radio" id="q9_yes" name="q9" value="yes">
+                                <label for="q9_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q9', 'no')">
+                                <input type="radio" id="q9_no" name="q9" value="no">
+                                <label for="q9_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q9', 'undecided')">
+                                <input type="radio" id="q9_undecided" name="q9" value="undecided">
+                                <label for="q9_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">10</div>
+                        <div class="question-text">Чи визначено у договорі межі Вашої відповідальності?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q10', 'yes')">
+                                <input type="radio" id="q10_yes" name="q10" value="yes">
+                                <label for="q10_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q10', 'no')">
+                                <input type="radio" id="q10_no" name="q10" value="no">
+                                <label for="q10_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q10', 'undecided')">
+                                <input type="radio" id="q10_undecided" name="q10" value="undecided">
+                                <label for="q10_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блок 3: Взаємодія з ОСББ -->
+                <div class="question-block">
+                    <h3>Блок 3: Взаємодія з ОСББ</h3>
+                    
+                    <div class="question">
+                        <div class="question-number">11</div>
+                        <div class="question-text">Чи отримуєте Ви завдання/рішення від правління або голови ОСББ?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q11', 'yes')">
+                                <input type="radio" id="q11_yes" name="q11" value="yes">
+                                <label for="q11_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q11', 'no')">
+                                <input type="radio" id="q11_no" name="q11" value="no">
+                                <label for="q11_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q11', 'undecided')">
+                                <input type="radio" id="q11_undecided" name="q11" value="undecided">
+                                <label for="q11_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">12</div>
+                        <div class="question-text">Чи відбувається регулярна комунікація з правлінням ОСББ?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q12', 'yes')">
+                                <input type="radio" id="q12_yes" name="q12" value="yes">
+                                <label for="q12_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q12', 'no')">
+                                <input type="radio" id="q12_no" name="q12" value="no">
+                                <label for="q12_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q12', 'undecided')">
+                                <input type="radio" id="q12_undecided" name="q12" value="undecided">
+                                <label for="q12_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">13</div>
+                        <div class="question-text">Чи присутні Ви на загальних зборах співвласників?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q13', 'yes')">
+                                <input type="radio" id="q13_yes" name="q13" value="yes">
+                                <label for="q13_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q13', 'no')">
+                                <input type="radio" id="q13_no" name="q13" value="no">
+                                <label for="q13_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q13', 'undecided')">
+                                <input type="radio" id="q13_undecided" name="q13" value="undecided">
+                                <label for="q13_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">14</div>
+                        <div class="question-text">Чи берете участь у підготовці порядку денного або звітів?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q14', 'yes')">
+                                <input type="radio" id="q14_yes" name="q14" value="yes">
+                                <label for="q14_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q14', 'no')">
+                                <input type="radio" id="q14_no" name="q14" value="no">
+                                <label for="q14_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q14', 'undecided')">
+                                <input type="radio" id="q14_undecided" name="q14" value="undecided">
+                                <label for="q14_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">15</div>
+                        <div class="question-text">Чи ініціюєте Ви управлінські рішення з власної ініціативи?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q15', 'yes')">
+                                <input type="radio" id="q15_yes" name="q15" value="yes">
+                                <label for="q15_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q15', 'no')">
+                                <input type="radio" id="q15_no" name="q15" value="no">
+                                <label for="q15_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q15', 'undecided')">
+                                <input type="radio" id="q15_undecided" name="q15" value="undecided">
+                                <label for="q15_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блок 4: Прозорість і звітність -->
+                <div class="question-block">
+                    <h3>Блок 4: Прозорість і звітність</h3>
+                    
+                    <div class="question">
+                        <div class="question-number">16</div>
+                        <div class="question-text">Чи здійснюєте Ви періодичну звітність перед ОСББ?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q16', 'yes')">
+                                <input type="radio" id="q16_yes" name="q16" value="yes">
+                                <label for="q16_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q16', 'no')">
+                                <input type="radio" id="q16_no" name="q16" value="no">
+                                <label for="q16_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q16', 'undecided')">
+                                <input type="radio" id="q16_undecided" name="q16" value="undecided">
+                                <label for="q16_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">17</div>
+                        <div class="question-text">Чи оприлюднюються Ваші звіти для співвласників?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q17', 'yes')">
+                                <input type="radio" id="q17_yes" name="q17" value="yes">
+                                <label for="q17_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q17', 'no')">
+                                <input type="radio" id="q17_no" name="q17" value="no">
+                                <label for="q17_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q17', 'undecided')">
+                                <input type="radio" id="q17_undecided" name="q17" value="undecided">
+                                <label for="q17_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">18</div>
+                        <div class="question-text">Чи маєте електронну систему ведення обліку/звітності?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q18', 'yes')">
+                                <input type="radio" id="q18_yes" name="q18" value="yes">
+                                <label for="q18_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q18', 'no')">
+                                <input type="radio" id="q18_no" name="q18" value="no">
+                                <label for="q18_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q18', 'undecided')">
+                                <input type="radio" id="q18_undecided" name="q18" value="undecided">
+                                <label for="q18_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">19</div>
+                        <div class="question-text">Чи контролює ОСББ використання коштів, які проходять через управителя?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q19', 'yes')">
+                                <input type="radio" id="q19_yes" name="q19" value="yes">
+                                <label for="q19_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q19', 'no')">
+                                <input type="radio" id="q19_no" name="q19" value="no">
+                                <label for="q19_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q19', 'undecided')">
+                                <input type="radio" id="q19_undecided" name="q19" value="undecided">
+                                <label for="q19_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">20</div>
+                        <div class="question-text">Чи здійснюється зовнішній або внутрішній аудит Вашої діяльності?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q20', 'yes')">
+                                <input type="radio" id="q20_yes" name="q20" value="yes">
+                                <label for="q20_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q20', 'no')">
+                                <input type="radio" id="q20_no" name="q20" value="no">
+                                <label for="q20_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q20', 'undecided')">
+                                <input type="radio" id="q20_undecided" name="q20" value="undecided">
+                                <label for="q20_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блок 5: Конфлікти та скарги -->
+                <div class="question-block">
+                    <h3>Блок 5: Конфлікти та скарги</h3>
+                    
+                    <div class="question">
+                        <div class="question-number">21</div>
+                        <div class="question-text">Чи мали Ви конфлікти з головою або правлінням ОСББ?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q21', 'yes')">
+                                <input type="radio" id="q21_yes" name="q21" value="yes">
+                                <label for="q21_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q21', 'no')">
+                                <input type="radio" id="q21_no" name="q21" value="no">
+                                <label for="q21_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q21', 'undecided')">
+                                <input type="radio" id="q21_undecided" name="q21" value="undecided">
+                                <label for="q21_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">22</div>
+                        <div class="question-text">Чи надходили на Вас скарги від співвласників?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q22', 'yes')">
+                                <input type="radio" id="q22_yes" name="q22" value="yes">
+                                <label for="q22_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q22', 'no')">
+                                <input type="radio" id="q22_no" name="q22" value="no">
+                                <label for="q22_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q22', 'undecided')">
+                                <input type="radio" id="q22_undecided" name="q22" value="undecided">
+                                <label for="q22_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">23</div>
+                        <div class="question-text">Чи були випадки розірвання договору через конфлікти?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q23', 'yes')">
+                                <input type="radio" id="q23_yes" name="q23" value="yes">
+                                <label for="q23_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q23', 'no')">
+                                <input type="radio" id="q23_no" name="q23" value="no">
+                                <label for="q23_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q23', 'undecided')">
+                                <input type="radio" id="q23_undecided" name="q23" value="undecided">
+                                <label for="q23_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">24</div>
+                        <div class="question-text">Чи вважаєте, що механізми врегулювання конфліктів у цій сфері є ефективними?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q24', 'yes')">
+                                <input type="radio" id="q24_yes" name="q24" value="yes">
+                                <label for="q24_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q24', 'no')">
+                                <input type="radio" id="q24_no" name="q24" value="no">
+                                <label for="q24_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q24', 'undecided')">
+                                <input type="radio" id="q24_undecided" name="q24" value="undecided">
+                                <label for="q24_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">25</div>
+                        <div class="question-text">Чи вважаєте, що більшість конфліктів пов'язані з браком розуміння повноважень?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q25', 'yes')">
+                                <input type="radio" id="q25_yes" name="q25" value="yes">
+                                <label for="q25_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q25', 'no')">
+                                <input type="radio" id="q25_no" name="q25" value="no">
+                                <label for="q25_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q25', 'undecided')">
+                                <input type="radio" id="q25_undecided" name="q25" value="undecided">
+                                <label for="q25_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блок 6: Деліберація, участь і комунікація -->
+                <div class="question-block">
+                    <h3>Блок 6: Деліберація, участь і комунікація</h3>
+                    
+                    <div class="question">
+                        <div class="question-number">26</div>
+                        <div class="question-text">Чи обговорюються управлінські рішення до їхнього ухвалення?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q26', 'yes')">
+                                <input type="radio" id="q26_yes" name="q26" value="yes">
+                                <label for="q26_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q26', 'no')">
+                                <input type="radio" id="q26_no" name="q26" value="no">
+                                <label for="q26_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q26', 'undecided')">
+                                <input type="radio" id="q26_undecided" name="q26" value="undecided">
+                                <label for="q26_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">27</div>
+                        <div class="question-text">Чи запроваджено консультації або зворотний зв'язок із співвласниками?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q27', 'yes')">
+                                <input type="radio" id="q27_yes" name="q27" value="yes">
+                                <label for="q27_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q27', 'no')">
+                                <input type="radio" id="q27_no" name="q27" value="no">
+                                <label for="q27_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q27', 'undecided')">
+                                <input type="radio" id="q27_undecided" name="q27" value="undecided">
+                                <label for="q27_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">28</div>
+                        <div class="question-text">Чи підтримуєте Ви практику електронного голосування або опитувань?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q28', 'yes')">
+                                <input type="radio" id="q28_yes" name="q28" value="yes">
+                                <label for="q28_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q28', 'no')">
+                                <input type="radio" id="q28_no" name="q28" value="no">
+                                <label for="q28_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q28', 'undecided')">
+                                <input type="radio" id="q28_undecided" name="q28" value="undecided">
+                                <label for="q28_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">29</div>
+                        <div class="question-text">Чи берете участь у громадських заходах ОСББ?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q29', 'yes')">
+                                <input type="radio" id="q29_yes" name="q29" value="yes">
+                                <label for="q29_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q29', 'no')">
+                                <input type="radio" id="q29_no" name="q29" value="no">
+                                <label for="q29_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q29', 'undecided')">
+                                <input type="radio" id="q29_undecided" name="q29" value="undecided">
+                                <label for="q29_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">30</div>
+                        <div class="question-text">Чи маєте досвід роботи з ревізійною комісією?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q30', 'yes')">
+                                <input type="radio" id="q30_yes" name="q30" value="yes">
+                                <label for="q30_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q30', 'no')">
+                                <input type="radio" id="q30_no" name="q30" value="no">
+                                <label for="q30_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q30', 'undecided')">
+                                <input type="radio" id="q30_undecided" name="q30" value="undecided">
+                                <label for="q30_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блок 7: Законодавчі аспекти -->
+                <div class="question-block">
+                    <h3>Блок 7: Законодавчі аспекти</h3>
+                    
+                    <div class="question">
+                        <div class="question-number">31</div>
+                        <div class="question-text">Чи вважаєте законодавче регулювання діяльності управителя достатнім?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q31', 'yes')">
+                                <input type="radio" id="q31_yes" name="q31" value="yes">
+                                <label for="q31_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q31', 'no')">
+                                <input type="radio" id="q31_no" name="q31" value="no">
+                                <label for="q31_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q31', 'undecided')">
+                                <input type="radio" id="q31_undecided" name="q31" value="undecided">
+                                <label for="q31_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">32</div>
+                        <div class="question-text">Чи підтримуєте введення стандартів професійної сертифікації управителів?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q32', 'yes')">
+                                <input type="radio" id="q32_yes" name="q32" value="yes">
+                                <label for="q32_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q32', 'no')">
+                                <input type="radio" id="q32_no" name="q32" value="no">
+                                <label for="q32_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q32', 'undecided')">
+                                <input type="radio" id="q32_undecided" name="q32" value="undecided">
+                                <label for="q32_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">33</div>
+                        <div class="question-text">Чи варто унормувати структуру звіту управителя в законі?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q33', 'yes')">
+                                <input type="radio" id="q33_yes" name="q33" value="yes">
+                                <label for="q33_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q33', 'no')">
+                                <input type="radio" id="q33_no" name="q33" value="no">
+                                <label for="q33_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q33', 'undecided')">
+                                <input type="radio" id="q33_undecided" name="q33" value="undecided">
+                                <label for="q33_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">34</div>
+                        <div class="question-text">Чи потрібно встановити мінімальні вимоги до досвіду та освіти управителя?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q34', 'yes')">
+                                <input type="radio" id="q34_yes" name="q34" value="yes">
+                                <label for="q34_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q34', 'no')">
+                                <input type="radio" id="q34_no" name="q34" value="no">
+                                <label for="q34_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q34', 'undecided')">
+                                <input type="radio" id="q34_undecided" name="q34" value="undecided">
+                                <label for="q34_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">35</div>
+                        <div class="question-text">Чи підтримуєте створення електронного реєстру управителів?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q35', 'yes')">
+                                <input type="radio" id="q35_yes" name="q35" value="yes">
+                                <label for="q35_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q35', 'no')">
+                                <input type="radio" id="q35_no" name="q35" value="no">
+                                <label for="q35_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q35', 'undecided')">
+                                <input type="radio" id="q35_undecided" name="q35" value="undecided">
+                                <label for="q35_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блок 8: Етичні та правові виклики -->
+                <div class="question-block">
+                    <h3>Блок 8: Етичні та правові виклики</h3>
+                    
+                    <div class="question">
+                        <div class="question-number">36</div>
+                        <div class="question-text">Чи виникали у Вас ситуації етичного конфлікту (інтереси/тиск/непрозорість)?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q36', 'yes')">
+                                <input type="radio" id="q36_yes" name="q36" value="yes">
+                                <label for="q36_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q36', 'no')">
+                                <input type="radio" id="q36_no" name="q36" value="no">
+                                <label for="q36_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q36', 'undecided')">
+                                <input type="radio" id="q36_undecided" name="q36" value="undecided">
+                                <label for="q36_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">37</div>
+                        <div class="question-text">Чи мали Ви справу з недобросовісним правлінням ОСББ?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q37', 'yes')">
+                                <input type="radio" id="q37_yes" name="q37" value="yes">
+                                <label for="q37_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q37', 'no')">
+                                <input type="radio" id="q37_no" name="q37" value="no">
+                                <label for="q37_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q37', 'undecided')">
+                                <input type="radio" id="q37_undecided" name="q37" value="undecided">
+                                <label for="q37_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">38</div>
+                        <div class="question-text">Чи були випадки судових спорів за участю Вашої компанії/особи?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q38', 'yes')">
+                                <input type="radio" id="q38_yes" name="q38" value="yes">
+                                <label for="q38_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q38', 'no')">
+                                <input type="radio" id="q38_no" name="q38" value="no">
+                                <label for="q38_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q38', 'undecided')">
+                                <input type="radio" id="q38_undecided" name="q38" value="undecided">
+                                <label for="q38_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">39</div>
+                        <div class="question-text">Чи знаєте Ви про порушення в ОСББ, які не вдалося вирішити?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q39', 'yes')">
+                                <input type="radio" id="q39_yes" name="q39" value="yes">
+                                <label for="q39_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q39', 'no')">
+                                <input type="radio" id="q39_no" name="q39" value="no">
+                                <label for="q39_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q39', 'undecided')">
+                                <input type="radio" id="q39_undecided" name="q39" value="undecided">
+                                <label for="q39_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">40</div>
+                        <div class="question-text">Чи зверталися Ви за правовою допомогою щодо своєї діяльності?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q40', 'yes')">
+                                <input type="radio" id="q40_yes" name="q40" value="yes">
+                                <label for="q40_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q40', 'no')">
+                                <input type="radio" id="q40_no" name="q40" value="no">
+                                <label for="q40_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q40', 'undecided')">
+                                <input type="radio" id="q40_undecided" name="q40" value="undecided">
+                                <label for="q40_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блок 9: Досвід і професійна підготовка -->
+                <div class="question-block">
+                    <h3>Блок 9: Досвід і професійна підготовка</h3>
+                    
+                    <div class="question">
+                        <div class="question-number">41</div>
+                        <div class="question-text">Скільки років Ви здійснюєте діяльність як управитель?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q41', 'less1')">
+                                <input type="radio" id="q41_less1" name="q41" value="less1">
+                                <label for="q41_less1">Менше 1</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q41', '1-3')">
+                                <input type="radio" id="q41_1-3" name="q41" value="1-3">
+                                <label for="q41_1-3">1-3</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q41', '4-6')">
+                                <input type="radio" id="q41_4-6" name="q41" value="4-6">
+                                <label for="q41_4-6">4-6</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q41', 'over6')">
+                                <input type="radio" id="q41_over6" name="q41" value="over6">
+                                <label for="q41_over6">Понад 6</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">42</div>
+                        <div class="question-text">Чи маєте профільну технічну або юридичну освіту?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q42', 'yes')">
+                                <input type="radio" id="q42_yes" name="q42" value="yes">
+                                <label for="q42_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q42', 'no')">
+                                <input type="radio" id="q42_no" name="q42" value="no">
+                                <label for="q42_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q42', 'undecided')">
+                                <input type="radio" id="q42_undecided" name="q42" value="undecided">
+                                <label for="q42_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">43</div>
+                        <div class="question-text">Чи проходили професійне навчання або сертифікацію?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q43', 'yes')">
+                                <input type="radio" id="q43_yes" name="q43" value="yes">
+                                <label for="q43_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q43', 'no')">
+                                <input type="radio" id="q43_no" name="q43" value="no">
+                                <label for="q43_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q43', 'undecided')">
+                                <input type="radio" id="q43_undecided" name="q43" value="undecided">
+                                <label for="q43_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">44</div>
+                        <div class="question-text">Чи є Ви членом професійної асоціації управителів?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q44', 'yes')">
+                                <input type="radio" id="q44_yes" name="q44" value="yes">
+                                <label for="q44_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q44', 'no')">
+                                <input type="radio" id="q44_no" name="q44" value="no">
+                                <label for="q44_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q44', 'undecided')">
+                                <input type="radio" id="q44_undecided" name="q44" value="undecided">
+                                <label for="q44_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">45</div>
+                        <div class="question-text">Чи підтримуєте регулярні тренінги та підвищення кваліфікації?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q45', 'yes')">
+                                <input type="radio" id="q45_yes" name="q45" value="yes">
+                                <label for="q45_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q45', 'no')">
+                                <input type="radio" id="q45_no" name="q45" value="no">
+                                <label for="q45_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q45', 'undecided')">
+                                <input type="radio" id="q45_undecided" name="q45" value="undecided">
+                                <label for="q45_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блок 10: Погляди на реформу та перспективи -->
+                <div class="question-block">
+                    <h3>Блок 10: Погляди на реформу та перспективи</h3>
+                    
+                    <div class="question">
+                        <div class="question-number">46</div>
+                        <div class="question-text">Чи потрібне оновлення законодавства щодо управителів?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q46', 'yes')">
+                                <input type="radio" id="q46_yes" name="q46" value="yes">
+                                <label for="q46_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q46', 'no')">
+                                <input type="radio" id="q46_no" name="q46" value="no">
+                                <label for="q46_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q46', 'undecided')">
+                                <input type="radio" id="q46_undecided" name="q46" value="undecided">
+                                <label for="q46_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">47</div>
+                        <div class="question-text">Чи доцільно створити наглядові механізми за діяльністю управителів?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q47', 'yes')">
+                                <input type="radio" id="q47_yes" name="q47" value="yes">
+                                <label for="q47_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q47', 'no')">
+                                <input type="radio" id="q47_no" name="q47" value="no">
+                                <label for="q47_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q47', 'undecided')">
+                                <input type="radio" id="q47_undecided" name="q47" value="undecided">
+                                <label for="q47_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">48</div>
+                        <div class="question-text">Чи варто визначити типові порушення з боку управителя у законі?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q48', 'yes')">
+                                <input type="radio" id="q48_yes" name="q48" value="yes">
+                                <label for="q48_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q48', 'no')">
+                                <input type="radio" id="q48_no" name="q48" value="no">
+                                <label for="q48_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q48', 'undecided')">
+                                <input type="radio" id="q48_undecided" name="q48" value="undecided">
+                                <label for="q48_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">49</div>
+                        <div class="question-text">Чи підтримуєте запровадження публічної платформи з оцінками управителів?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q49', 'yes')">
+                                <input type="radio" id="q49_yes" name="q49" value="yes">
+                                <label for="q49_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q49', 'no')">
+                                <input type="radio" id="q49_no" name="q49" value="no">
+                                <label for="q49_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q49', 'undecided')">
+                                <input type="radio" id="q49_undecided" name="q49" value="undecided">
+                                <label for="q49_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">50</div>
+                        <div class="question-text">Чи вважаєте доцільним продовжити такі дослідження для вдосконалення практики?</div>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this, 'q50', 'yes')">
+                                <input type="radio" id="q50_yes" name="q50" value="yes">
+                                <label for="q50_yes">Так</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q50', 'no')">
+                                <input type="radio" id="q50_no" name="q50" value="no">
+                                <label for="q50_no">Ні</label>
+                            </div>
+                            <div class="option" onclick="selectOption(this, 'q50', 'undecided')">
+                                <input type="radio" id="q50_undecided" name="q50" value="undecided">
+                                <label for="q50_undecided">Не визначився</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                    <div class="spinner hidden" id="spinner"></div>
+                    <span class="btn-text">Надіслати відповіді</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        window.SURVEY_CONFIG = {
+            API_BASE_URL: '../api/',
+            SURVEY_TYPE: 'osbb_members_board', 
+            TOTAL_QUESTIONS: 50
+        };
+    </script>
+    <script src="js/survey-scripts.js"></script>
+</body>
+</html>
+
+
+
