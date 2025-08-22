@@ -1,0 +1,463 @@
+/**
+ * Styles for the reports page
+ * admin/css/reports-style.css
+ */
+
+
+.export-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.export-buttons .btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn-csv {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    border-color: #28a745;
+}
+
+.btn-csv:hover {
+    background: linear-gradient(135deg, #218838, #1fa185);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+.btn-excel {
+    background: linear-gradient(135deg, #025b79, #0a7ba3);
+    color: white;
+    border-color: #025b79;
+}
+
+.btn-excel:hover {
+    background: linear-gradient(135deg, #023d54, #086082);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(2, 91, 121, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    font-size: 14px;
+    margin: 0;
+}
+
+.data-table th {
+    background: #025b79;
+    color: white;
+    padding: 15px 12px;
+    font-weight: 600;
+    text-align: left;
+    border-bottom: 2px solid #023d54;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.data-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: top;
+    line-height: 1.4;
+}
+
+.data-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.data-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background: rgba(2, 91, 121, 0.02);
+}
+
+.data-table tbody tr:nth-child(even):hover {
+    background: #f0f8ff;
+}
+
+
+.question-cell {
+    max-width: 400px;
+    line-height: 1.4;
+}
+
+.question-title {
+    font-weight: 600;
+    color: #025b79;
+    margin-bottom: 5px;
+}
+
+.question-code {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    color: #999;
+    background: #f8f9fa;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.survey-badge {
+    background: #f0f8ff;
+    color: #025b79;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #e3f2fd;
+}
+
+.answer-yes {
+    background: #e8f5e8;
+    color: #2e7d32;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    min-width: 40px;
+    display: inline-block;
+    border: 1px solid #a5d6a7;
+}
+
+.answer-no {
+    background: #ffebee;
+    color: #c62828;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    min-width: 40px;
+    display: inline-block;
+    border: 1px solid #ef9a9a;
+}
+
+.answer-undecided {
+    background: #fff8e1;
+    color: #f57f17;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    min-width: 40px;
+    display: inline-block;
+    border: 1px solid #ffcc02;
+}
+
+.answer-total {
+    background: #025b79;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    min-width: 40px;
+    display: inline-block;
+}
+
+.answer-zero {
+    color: #ccc;
+    font-weight: normal;
+    padding: 6px 10px;
+    text-align: center;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    background: #f8f9fa;
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    font-weight: bold;
+    color: #025b79;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.record-count {
+    background: #e3f2fd;
+    color: #025b79;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #025b79;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: bold;
+    color: #025b79;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.empty-state {
+    padding: 60px 40px;
+    text-align: center;
+    color: #666;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.empty-state-icon {
+    font-size: 64px;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.empty-state h3 {
+    color: #025b79;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.empty-state p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.alert {
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alert-danger {
+    background: #fff5f5;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+.alert-info {
+    background: #f0f9ff;
+    color: #0c5460;
+    border-color: #bee5eb;
+}
+
+.export-hint {
+    margin-top: 15px;
+    padding: 12px 15px;
+    background: #f8f9fa;
+    border-left: 4px solid #025b79;
+    border-radius: 0 4px 4px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.export-hint strong {
+    color: #025b79;
+}
+
+@media (max-width: 768px) {
+    .export-buttons {
+        flex-direction: column;
+    }
+    
+    .export-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .data-table {
+        font-size: 12px;
+    }
+    
+    .data-table th,
+    .data-table td {
+        padding: 8px 6px;
+    }
+    
+    .data-table th {
+        font-size: 11px;
+    }
+    
+    .question-cell {
+        max-width: 200px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .stat-card {
+        padding: 20px;
+    }
+    
+    .stat-number {
+        font-size: 28px;
+    }
+    
+    .card-header {
+        padding: 15px;
+        font-size: 14px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .export-hint {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .data-table th,
+    .data-table td {
+        padding: 6px 4px;
+    }
+    
+    .question-cell {
+        max-width: 150px;
+    }
+    
+    .answer-yes,
+    .answer-no,
+    .answer-undecided,
+    .answer-total {
+        padding: 4px 6px;
+        font-size: 12px;
+        min-width: 30px;
+    }
+    
+    .survey-badge {
+        font-size: 11px;
+        padding: 3px 6px;
+    }
+}
+
+.card,
+.stat-card {
+    animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: #025b79;
+    font-size: 16px;
+}
+
+.loading::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e0e0e0;
+    border-top: 2px solid #025b79;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
